@@ -40,7 +40,7 @@ public class Service {
         } else {
             System.out.println("The employees are:");
             for (Employee emp : employees) {
-                System.out.println(employees.indexOf(emp) + ". " + emp.afisare());
+                System.out.println(employees.indexOf(emp) + ". " + emp.printEmployee());
             }
         }
     }
@@ -76,7 +76,7 @@ public class Service {
     void editEmployee(int ID, String firstname, String lastname, LocalDate birthDate, LocalDate hireDate) {
         Employee editedEmp;
 
-        editedEmp = employees.get(ID).editare(lastname, firstname, birthDate, hireDate);
+        editedEmp = employees.get(ID).edit(lastname, firstname, birthDate, hireDate);
         employees.set(ID, editedEmp);
     }
 
@@ -213,7 +213,7 @@ public class Service {
            if (list.size() <= i - 1 || list.get(i - 1).getValue() == 0)
                System.out.println("Rank " + i + " - no employee");
            else
-               System.out.println("Rank " + i + employees.get(list.get(i - 1).getKey()).printEmployees());
+               System.out.println("Rank " + i + employees.get(list.get(i - 1).getKey()).printEmployee());
        }
     }
 
@@ -233,7 +233,7 @@ public class Service {
             public int compare(Map.Entry<Integer, Integer> a,
                                Map.Entry<Integer, Integer> b)
             {
-                return (b.getValue()).compareTo(a1.getValue());
+                return (b.getValue()).compareTo(a.getValue());
             }
         });
 

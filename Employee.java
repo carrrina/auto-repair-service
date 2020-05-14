@@ -7,7 +7,7 @@ public abstract class Employee {
     private LocalDate birthDate, hireDate;
     private float coefSalary;
 
-    public Angajat(int ID, String lastName, String firstName, LocalDate birthDate, LocalDate hireDate, float coefSalary) {
+    public Employee(int ID, String lastName, String firstName, LocalDate birthDate, LocalDate hireDate, float coefSalary) {
         this.ID = ID;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -20,7 +20,7 @@ public abstract class Employee {
         return ID;
     }
 
-    Angajat setID(int ID) {
+    Employee setID(int ID) {
         this.ID = ID;
         return this;
     }
@@ -45,7 +45,7 @@ public abstract class Employee {
         return coefSalary;
     }
 
-    Angajat edit(String lastName, String firstName, LocalDate birthDate, LocalDate hireDate) {
+    Employee edit(String lastName, String firstName, LocalDate birthDate, LocalDate hireDate) {
         if (!lastName.isEmpty())
             this.lastName = lastName;
         if (!firstName.isEmpty())
@@ -62,5 +62,5 @@ public abstract class Employee {
         return Period.between(hireDate, LocalDate.now()).getYears() * coefSalary * 1000.f;
     }
 
-    abstract String toString();
+    abstract String printEmployee();
 }

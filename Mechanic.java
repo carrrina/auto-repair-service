@@ -6,7 +6,7 @@ public class Mechanic extends Employee {
     }
 
     @Override
-    String toString() {
+    String printEmployee() {
         return getLastName() + " " + getFirstName() + ", mechanic, born on " + getBirthDate().toString() +
                 ", hired on " + getHireDate() + ", coefficient " + getCoefSalary() + ", salary " + computeSalary();
     }
